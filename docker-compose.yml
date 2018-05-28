@@ -1,0 +1,20 @@
+version: '2'
+services:
+  mysql:
+    image: mariadb
+    container_name: mapa_mysql
+    ports:
+      - '8081:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: wp
+  wordpress:
+    image: wordpress:php5.6
+    container_name: mapa_wordpress
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - '127.0.0.1:8080:80'
+    links:
+      - mysql:mysql
+    environment:
+      WORDPRESS_DB_PASSWORD: wp
