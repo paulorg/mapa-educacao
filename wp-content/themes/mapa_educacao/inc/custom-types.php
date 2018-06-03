@@ -1,0 +1,55 @@
+<?php
+	function register_highlights_post() {
+		$labels = array(
+			'name'                  => _x( 'Destaques', 'Post Type General Name', 'mapa-educacao' ),
+			'singular_name'         => _x( 'Destaque', 'Post Type Singular Name', 'mapa-educacao' ),
+			'menu_name'             => __( 'Destaques da página inicial', 'mapa-educacao' ),
+			'name_admin_bar'        => __( 'Destaques', 'mapa-educacao' ),
+			'archives'              => __( 'Lista de', 'mapa-educacao' ),
+			'attributes'            => __( 'Atributos de', 'mapa-educacao' ),
+			'parent_item_colon'     => __( 'Destaque pai:', 'mapa-educacao' ),
+			'all_items'             => __( 'Todos destaques', 'mapa-educacao' ),
+			'add_new_item'          => __( 'Criar novo destaque', 'mapa-educacao' ),
+			'add_new'               => __( 'Criar novo', 'mapa-educacao' ),
+			'new_item'              => __( 'Novo destaque', 'mapa-educacao' ),
+			'edit_item'             => __( 'Editar destaque', 'mapa-educacao' ),
+			'update_item'           => __( 'Atualizar destaque', 'mapa-educacao' ),
+			'view_item'             => __( 'Ver destaque', 'mapa-educacao' ),
+			'view_items'            => __( 'Ver destaques', 'mapa-educacao' ),
+			'search_items'          => __( 'Buscar por', 'mapa-educacao' ),
+			'not_found'             => __( 'Nenhum destaque encontrado', 'mapa-educacao' ),
+			'not_found_in_trash'    => __( 'Nenhum destaque encontrado no lixo', 'mapa-educacao' ),
+			'featured_image'        => __( 'Capa', 'mapa-educacao' ),
+			'set_featured_image'    => __( 'Enviar capa', 'mapa-educacao' ),
+			'remove_featured_image' => __( 'Remover capa', 'mapa-educacao' ),
+			'use_featured_image'    => __( 'Usar como capa', 'mapa-educacao' ),
+			'insert_into_item'      => __( 'Inserir no destaque', 'mapa-educacao' ),
+			'uploaded_to_this_item' => __( 'Subir para este destaque', 'mapa-educacao' ),
+			'items_list'            => __( 'Lista de destaques', 'mapa-educacao' ),
+			'items_list_navigation' => __( 'Navegar por destaques', 'mapa-educacao' ),
+			'filter_items_list'     => __( 'Filtrar por destaques', 'mapa-educacao' ),
+		);
+		$args = array(
+			'label'                 => __( 'Destaques Portal', 'mapa-educacao' ),
+			'description'           => __( 'Destaques do portal Mapa Educação', 'mapa-educacao' ),
+			'labels'                => $labels,
+			'supports'              => array( 'title', 'thumbnail', 'excerpt' ),
+			'taxonomies'            => array( '' ),
+			'hierarchical'          => false,
+			'public'                => true,
+			'show_ui'               => true,
+			'show_in_menu'          => true,
+			'menu_position'         => 5,
+			'menu_icon'             => 'dashicons-admin-home',
+			'show_in_admin_bar'     => true,
+			'show_in_nav_menus'     => true,
+			'can_export'            => true,
+			'has_archive'           => 'destaques',
+			'exclude_from_search'   => false,
+			'publicly_queryable'    => true,
+			'capability_type'       => 'page',
+		);
+		register_post_type( 'highlights', $args );
+
+	}
+	add_action( 'init', 'register_highlights_post', 0 );

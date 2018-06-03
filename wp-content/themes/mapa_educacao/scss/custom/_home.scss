@@ -1,0 +1,105 @@
+// Highlights
+
+.highlights{
+	background: $primary;
+	position: relative;
+	max-height: 100vh;
+	min-height: 16rem;
+	overflow: hidden;
+	.item{
+		min-height: 16rem;
+		height: 105vh;
+		position: relative;
+		.container{
+			// padding-top: 5rem;
+			position: relative;
+			z-index: 0;
+			h2{
+				color: $white;
+				font-size: 2rem;
+				font-weight: 700;
+				line-height: 1.125;
+			}
+			a{
+				color: $white;
+			}
+		}
+		figure{
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			overflow: hidden;
+			right: 0;
+			top: 0;
+			z-index: -1;
+			img{
+				object-fit: cover;
+				filter: grayscale(1);
+				height: 100%;
+				width: 100%;
+			}
+			&:before{
+				background: radial-gradient(circle, rgba(1,37,109,0.8) 0%, rgba(170,34,145,1) 100%);
+				bottom: -30%;
+				content: '';
+				display: block;
+				position: absolute;
+				left: -30%;
+				right: -30%;
+				top: -30%;
+				z-index: 1;
+			}
+		}
+	}
+	.owl-dots{
+		bottom: 1rem;
+		display: flex;
+		flex-direction: row;
+		height: auto;
+		justify-content: space-evenly;
+		padding: .5rem 30%;
+		position: absolute;
+		top: auto;
+		width: 100%;
+		.owl-dot{
+			background: rgba($white, .3);
+			border-radius: 1rem;
+			display: inline-block;
+			height: .5rem;
+			transition: all .2s;
+			width: .5rem;
+			&.active, &:hover{
+				background: $white;
+			}
+			&:active, &:focus{
+				outline: none;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(md){
+	.highlights{
+		.item{
+			.container{
+				h2{
+					font-size: 3rem;
+					max-width: 50%;
+				}
+			}
+		}
+		.owl-dots{
+			bottom: auto;
+			flex-direction: column;
+			height: 5rem;
+			justify-content: space-evenly;
+			margin: -2.5rem 0 0 0;
+			padding: 0 .5rem;
+			top: 50%;
+			width: auto;
+		}
+	}
+}
+
+@include media-breakpoint-up(lg){
+}

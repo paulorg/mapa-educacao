@@ -2,6 +2,7 @@
 	require_once('inc/custom-types.php');
 	require_once('inc/metaboxes.php');
 	require_once('inc/filters.php');
+	require_once('inc/bs4navwalker.php');
 
 	function theme_setup() {
 		add_theme_support('automatic-feed-links');
@@ -26,6 +27,14 @@
 		wp_enqueue_script('script-jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array (), 1.0, true);
 		wp_enqueue_script('script-popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array (), 1.0, true);
 		wp_enqueue_script('script-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js', array (), 1.0, true);
-		wp_enqueue_script('script-city', get_template_directory_uri() . '/js/site.js', array (), 1.01, true);
+		wp_enqueue_script('script-site', get_template_directory_uri() . '/js/site.js', array (), 1.0, true);
+		wp_enqueue_script('script-owl-plugin', get_template_directory_uri() . '/js/owl.carousel.min.js', array (), 1.0, true);
 	}
 	add_action('wp_enqueue_scripts', 'add_theme_scripts');
+
+
+	function register_menus() {
+		register_nav_menu( 'main', __( 'Navegação Principal', 'mapa-educacao' ) );
+		register_nav_menu( 'footer', __( 'Rodapé', 'mapa-educacao' ) );
+	}
+	add_action( 'after_setup_theme', 'register_menus' );

@@ -6,8 +6,11 @@ Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
-
-@import "scss/bootstrap/bootstrap";
 @import "scss/custom/variables";
+@import "scss/bootstrap/bootstrap";
 @import "scss/custom/typography";
+@import "scss/custom/home";
 @import "scss/custom/global";
+
+@import "scss/owl.carousel/owl.carousel";
+@import "scss/custom/owl.carousel";

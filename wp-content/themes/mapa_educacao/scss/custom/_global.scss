@@ -1,0 +1,116 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+	position: relative;
+	& > header{
+		left: 0;
+		position: absolute;
+		right: 0;
+		z-index: 10;
+		.main-nav{
+			background: rgba($primary, .3);
+			.navbar-brand{
+				color: $white;
+				padding: 0;
+				h1{
+					font-size: 1.5rem;
+					font-weight: 700;
+					line-height: 1;
+					margin: 0;
+					padding: .75rem 0;
+				}
+			}
+			.navbar-collapse{
+				.navbar-nav{
+
+					li{
+						.nav-link{
+							color: $white;
+							font-size: .875em;
+							line-height: 1rem;
+							padding: .5rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg){
+	body{
+		& > header{
+			.main-nav{
+				background: transparent;
+				height: 7rem;
+				.navbar-brand{
+					border: 1px solid red;
+					display: inline-block;
+					height: 4rem;
+					margin: 0;
+					text-indent: -5000px;
+					width: 145px;
+				}
+				.navbar-collapse{
+					padding: 3rem 0 0;
+					position: relative;
+					.navbar-nav{
+						li{
+							.nav-link{
+								padding: .5rem 1rem;
+							}
+							&:nth-last-child(2){
+								.nav-link{
+									background: green;
+									padding-right: 0;
+								}
+							}
+							&.more-links{
+								position: absolute;
+								top: 0;
+								bottom: 3rem;
+								left: 0;
+								right: 0;
+								text-align: right;
+								& > a{
+									overflow: hidden;
+									padding: 0;
+									width: 0;
+								}
+								.dropdown-menu{
+									background: transparent;
+									border: none;
+									display: block;
+									bottom: 0;
+									left: 0;
+									margin: 0;
+									padding: 0;
+									right: 0;
+									text-align: right;
+									top: 0;
+									.dropdown-item{
+										color: $white;
+										display: inline-block;
+										font-size: .875rem;
+										font-weight: 700;
+										line-height: 1rem;
+										padding: .5rem 1rem;
+										text-transform: uppercase;
+										width: auto;
+										&:last-child{
+											background: green;
+											padding-right: 0;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

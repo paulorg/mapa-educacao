@@ -23,7 +23,7 @@ class bs4Navwalker extends Walker_Nav_Menu
      */
     public function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<div class=\"dropdown-menu\">\n";
+        $output .= "\n$indent<div class=\"dropdown-menu dropdown-menu-right\">\n";
     }
 
     /**
@@ -76,7 +76,7 @@ class bs4Navwalker extends Walker_Nav_Menu
 
         // New
         $class_names .= ' nav-item';
-        
+
         if (in_array('menu-item-has-children', $classes)) {
             $class_names .= ' dropdown';
         }

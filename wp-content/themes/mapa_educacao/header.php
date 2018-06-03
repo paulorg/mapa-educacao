@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
-		<!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-XXXXX');</script><!-- End Google Tag Manager -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <?php wp_head(); ?>
-  </head>
-  <body <?php body_class(); ?>>
-		<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+		<?php wp_head(); ?>
+	</head>
+	<body <?php body_class(); ?>>
+		<header>
+			<nav class="main-nav navbar navbar-expand-lg" role="navigation">
+				<div class="container">
+					<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><h1><?php _e('Mapa Educação', 'mapa-educacao'); ?></h1></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="<?php _e('Navegação', 'mapa-educacao'); ?>"><span class="navbar-toggler-icon"></span></button>
+					<?php
+					wp_nav_menu([
+						'theme_location'  => 'main',
+						'container'       => 'div',
+						'container_id'    => 'main-nav',
+						'container_class' => 'collapse navbar-collapse justify-content-end',
+						'menu_class'      => 'navbar-nav',
+						'depth'           => 2,
+						'fallback_cb'     => 'bs4navwalker::fallback',
+						'walker'          => new bs4navwalker()
+						]);
+					?>
+				</div>
+			</nav>
+		</header>
