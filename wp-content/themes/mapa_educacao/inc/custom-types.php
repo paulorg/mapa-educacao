@@ -53,3 +53,58 @@
 
 	}
 	add_action( 'init', 'register_highlights_post', 0 );
+
+	function register_news_post() {
+		$labels = array(
+			'name'                  => _x( 'Notícias', 'Post Type General Name', 'mapa-educacao' ),
+			'singular_name'         => _x( 'Notícia', 'Post Type Singular Name', 'mapa-educacao' ),
+			'menu_name'             => __( 'Notícias', 'mapa-educacao' ),
+			'name_admin_bar'        => __( 'Notícias', 'mapa-educacao' ),
+			'archives'              => __( 'Lista de', 'mapa-educacao' ),
+			'attributes'            => __( 'Atributos de', 'mapa-educacao' ),
+			'parent_item_colon'     => __( 'Notícia pai:', 'mapa-educacao' ),
+			'all_items'             => __( 'Todas noticias', 'mapa-educacao' ),
+			'add_new_item'          => __( 'Criar nova nova', 'mapa-educacao' ),
+			'add_new'               => __( 'Criar nova', 'mapa-educacao' ),
+			'new_item'              => __( 'Nova notícia', 'mapa-educacao' ),
+			'edit_item'             => __( 'Editar notícia', 'mapa-educacao' ),
+			'update_item'           => __( 'Atualizar notícia', 'mapa-educacao' ),
+			'view_item'             => __( 'Ver notícia', 'mapa-educacao' ),
+			'view_items'            => __( 'Ver noticias', 'mapa-educacao' ),
+			'search_items'          => __( 'Buscar por', 'mapa-educacao' ),
+			'not_found'             => __( 'Nenhuma notícia encontrada', 'mapa-educacao' ),
+			'not_found_in_trash'    => __( 'Nenhuma notícia encontrada no lixo', 'mapa-educacao' ),
+			'featured_image'        => __( 'Miniatura', 'mapa-educacao' ),
+			'set_featured_image'    => __( 'Enviar miniatura', 'mapa-educacao' ),
+			'remove_featured_image' => __( 'Remover miniatura', 'mapa-educacao' ),
+			'use_featured_image'    => __( 'Usar como miniatura', 'mapa-educacao' ),
+			'insert_into_item'      => __( 'Inserir na notícia', 'mapa-educacao' ),
+			'uploaded_to_this_item' => __( 'Subir para esta notícia', 'mapa-educacao' ),
+			'items_list'            => __( 'Lista de noticias', 'mapa-educacao' ),
+			'items_list_navigation' => __( 'Navegar por noticias', 'mapa-educacao' ),
+			'filter_items_list'     => __( 'Filtrar por noticias', 'mapa-educacao' ),
+		);
+		$args = array(
+			'label'                 => __( 'Notícia', 'mapa-educacao' ),
+			'description'           => __( 'Notícias', 'mapa-educacao' ),
+			'labels'                => $labels,
+			'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+			'taxonomies'            => array( 'category', 'post_tags' ),
+			'hierarchical'          => false,
+			'public'                => true,
+			'show_ui'               => true,
+			'show_in_menu'          => true,
+			'menu_position'         => 5,
+			'menu_icon'             => 'dashicons-megaphone',
+			'show_in_admin_bar'     => true,
+			'show_in_nav_menus'     => true,
+			'can_export'            => true,
+			'has_archive'           => 'noticias',
+			'exclude_from_search'   => false,
+			'publicly_queryable'    => true,
+			'capability_type'       => 'post',
+		);
+		register_post_type( 'news', $args );
+
+	}
+	add_action( 'init', 'register_news_post', 0 );

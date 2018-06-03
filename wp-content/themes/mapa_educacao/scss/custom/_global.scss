@@ -6,32 +6,88 @@
 body{
 	position: relative;
 	& > header{
-		left: 0;
-		position: absolute;
-		right: 0;
-		z-index: 10;
 		.main-nav{
-			background: rgba($primary, .3);
+			background: $purple;
 			.navbar-brand{
 				color: $white;
 				padding: 0;
 				h1{
-					font-size: 1.5rem;
+					font-size: 1.25rem;
 					font-weight: 700;
-					line-height: 1;
+					line-height: 1.5rem;
 					margin: 0;
 					padding: .75rem 0;
 				}
 			}
+			.navbar-toggler{
+				background: url('img/navigation_icon.svg') no-repeat center center;
+				background-size: cover;
+				border: none;
+				height: 2rem;
+				width: 2rem;
+				&:hover, &:active, &:focus{
+					outline: none;
+				}
+			}
 			.navbar-collapse{
 				.navbar-nav{
-
 					li{
 						.nav-link{
 							color: $white;
 							font-size: .875em;
+							font-weight: normal;
 							line-height: 1rem;
-							padding: .5rem;
+							padding: .5rem 0;
+							transition: all .2s ease-out;
+							&.dropdown-toggle{
+								&:after{
+									background: url('img/dropdown_icon.svg') no-repeat center center;
+									background-size: cover;
+									border: none;
+									height: .5rem;
+									margin: 0 0 0 .5rem;
+									vertical-align: middle;
+									width: .5rem;
+								}
+							}
+						}
+						.dropdown-menu{
+							background: transparent;
+							border: none;
+							border-radius: 0;
+							box-shadow: inset 2px 0 0 rgba($white, .5);
+							padding: 0;
+							.dropdown-item{
+								color: $white;
+								font-size: .875rem;
+								line-height: 1rem;
+								padding: .5rem 0 .5rem 1rem;
+							}
+						}
+						&.more-links{
+							.dropdown-menu{
+								box-shadow: none;
+								display: block;
+								.dropdown-item{
+									padding: .5rem 0;
+									transition: all .2s ease-out;
+									&.cta{
+										border-radius: 4px;
+										background: $secondary;
+										color: $gray-900;
+										font-weight: 500;
+										margin: .5rem 0;
+										padding: .5rem;
+										&:hover, &:active, &:focus{
+											background: lighten($secondary, 10%);
+											outline: none;
+										}
+									}
+								}
+							}
+							& > a{
+								display: none;
+							}
 						}
 					}
 				}
@@ -43,19 +99,24 @@ body{
 @include media-breakpoint-up(lg){
 	body{
 		& > header{
+			left: 0;
+			position: absolute;
+			right: 0;
+			z-index: 10;
 			.main-nav{
 				background: transparent;
 				height: 7rem;
 				.navbar-brand{
-					border: 1px solid red;
+					background: url('img/logo_mapa.svg') no-repeat top left;
+					background-size: cover;
 					display: inline-block;
 					height: 4rem;
-					margin: 0;
+					margin: -1rem 0 0;
 					text-indent: -5000px;
 					width: 145px;
 				}
 				.navbar-collapse{
-					padding: 3rem 0 0;
+					padding: 5rem 0 0;
 					position: relative;
 					.navbar-nav{
 						li{
@@ -64,22 +125,30 @@ body{
 							}
 							&:nth-last-child(2){
 								.nav-link{
-									background: green;
 									padding-right: 0;
+								}
+							}
+							.dropdown-menu{
+								background: $white;
+								box-shadow: inset 0 3px 0 $primary;
+								padding: .5rem 0 0;
+								.dropdown-item{
+									color: $gray-900;
+									padding: .5rem 1rem;
+									transition: all .2s ease-out;
+									&:hover, &:active, &:focus{
+										background: transparent;
+										color: $primary;
+										padding-left: 1.25rem;
+									}
 								}
 							}
 							&.more-links{
 								position: absolute;
-								top: 0;
-								bottom: 3rem;
+								top: 2rem;
 								left: 0;
 								right: 0;
 								text-align: right;
-								& > a{
-									overflow: hidden;
-									padding: 0;
-									width: 0;
-								}
 								.dropdown-menu{
 									background: transparent;
 									border: none;
@@ -97,12 +166,26 @@ body{
 										font-size: .875rem;
 										font-weight: 700;
 										line-height: 1rem;
-										padding: .5rem 1rem;
+										padding: .5rem 1.25rem;
 										text-transform: uppercase;
 										width: auto;
-										&:last-child{
-											background: green;
-											padding-right: 0;
+										&.search{
+											background: url('img/search_icon.svg') no-repeat center center;
+											background-size: contain;
+											display: inline-block;
+											height: 2rem;
+											margin-left: 1rem;
+											overflow: hidden;
+											padding: 0;
+											position: relative;
+											text-indent: -5000px;
+											text-align: left;
+											vertical-align: middle;
+											width: 1rem;
+										}
+										&.cta{
+											margin: 0 1rem;
+											padding: .5rem 1.5rem;
 										}
 									}
 								}

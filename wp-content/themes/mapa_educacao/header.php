@@ -9,7 +9,7 @@
 			<nav class="main-nav navbar navbar-expand-lg" role="navigation">
 				<div class="container">
 					<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><h1><?php _e('Mapa Educação', 'mapa-educacao'); ?></h1></a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="<?php _e('Navegação', 'mapa-educacao'); ?>"><span class="navbar-toggler-icon"></span></button>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="<?php _e('Navegação', 'mapa-educacao'); ?>"></button>
 					<?php
 					wp_nav_menu([
 						'theme_location'  => 'main',
