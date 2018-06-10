@@ -94,6 +94,92 @@ body{
 			}
 		}
 	}
+  & > footer{
+    background: linear-gradient(45deg, darken($blue, 15%) 0%, $blue 100%);
+    color: $white;
+    padding: 5rem 0;
+    h2{
+      background: url('img/logo_mapa.svg') no-repeat top center;
+      background-size: contain;
+      display: block;
+      height: 6rem;
+      margin: 0 0 2rem;
+      overflow: hidden;
+      position: relative;
+      text-indent: -5000px;
+      width: 160px;
+      &:after{
+        background: $white;
+        bottom: 0;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 2rem;
+      }
+    }
+    p{
+      font-size: .875em;
+      line-height: 1rem;
+      margin: 0 0 .5rem;
+      &.privacy-policy{
+        margin-top: 2rem;
+        a{
+    			display: inline-block;
+          font-style: italic;
+    			padding: 0;
+    			position: relative;
+    			transition: all .2s ease-out;
+    			&:after{
+    				border-bottom: 1px solid $white;
+    				content: '';
+    				display: inline-block;
+    				height: 1.25rem;
+    				left: 0;
+    				position: absolute;
+    				right: 0;
+    				transition: all .2s ease-out;
+    			}
+          &:hover, &:active, &:focus{
+            padding-left: .5rem;
+            text-decoration: none;
+            &:after{
+  						left: .5rem;
+  					}
+          }
+        }
+      }
+    }
+    a{
+      color: $white;
+      transition: all .2s ease-out;
+      &:hover, &:active, &:focus{
+        color: $white;
+      }
+    }
+    ul{
+      list-style: none;
+      li{
+        font-weight: 700;
+        text-transform: uppercase;
+        a{
+          font-size: .875em;
+          line-height: 1rem;
+        }
+        ul{
+          padding: 0;
+          li{
+            font-weight: normal;
+            margin: 0 1rem 0 0;
+            text-transform: none;
+          }
+        }
+        & + li{
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
 }
 
 @include media-breakpoint-up(lg){
@@ -196,4 +282,20 @@ body{
 			}
 		}
 	}
+}
+@include media-breakpoint-up(md){
+	body{
+		& > footer{
+      ul{
+        li{
+          ul{
+            padding: 0;
+            li{
+              display: inline;
+            }
+          }
+        }
+      }
+    }
+  }
 }
