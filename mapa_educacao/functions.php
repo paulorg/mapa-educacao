@@ -34,7 +34,13 @@
 
 
 	function register_menus() {
-		register_nav_menu( 'main', __( 'Navegação Principal', 'mapa-educacao' ) );
-		register_nav_menu( 'footer', __( 'Rodapé', 'mapa-educacao' ) );
+		register_nav_menu('main', __( 'Navegação Principal', 'mapa-educacao'));
+		register_nav_menu('footer', __( 'Rodapé', 'mapa-educacao'));
 	}
-	add_action( 'after_setup_theme', 'register_menus' );
+	add_action('after_setup_theme', 'register_menus');
+
+
+	function projects_thumbnails() {
+		add_image_size( 'projects-thumb', 128, 128, true );
+	}
+	add_action('after_setup_theme', 'projects_thumbnails');

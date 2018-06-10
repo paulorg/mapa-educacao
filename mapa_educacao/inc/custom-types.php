@@ -64,7 +64,7 @@
 			'attributes'            => __( 'Atributos de', 'mapa-educacao' ),
 			'parent_item_colon'     => __( 'Notícia pai:', 'mapa-educacao' ),
 			'all_items'             => __( 'Todas noticias', 'mapa-educacao' ),
-			'add_new_item'          => __( 'Criar nova nova', 'mapa-educacao' ),
+			'add_new_item'          => __( 'Criar nova', 'mapa-educacao' ),
 			'add_new'               => __( 'Criar nova', 'mapa-educacao' ),
 			'new_item'              => __( 'Nova notícia', 'mapa-educacao' ),
 			'edit_item'             => __( 'Editar notícia', 'mapa-educacao' ),
@@ -108,3 +108,58 @@
 
 	}
 	add_action( 'init', 'register_news_post', 0 );
+
+	function register_projects() {
+		$labels = array(
+			'name'                  => _x( 'Projetos', 'Post Type General Name', 'mapa-educacao' ),
+			'singular_name'         => _x( 'Projeto', 'Post Type Singular Name', 'mapa-educacao' ),
+			'menu_name'             => __( 'Projetos', 'mapa-educacao' ),
+			'name_admin_bar'        => __( 'Projetos', 'mapa-educacao' ),
+			'archives'              => __( 'Lista de', 'mapa-educacao' ),
+			'attributes'            => __( 'Atributos de', 'mapa-educacao' ),
+			'parent_item_colon'     => __( 'Projeto pai:', 'mapa-educacao' ),
+			'all_items'             => __( 'Todos projetos', 'mapa-educacao' ),
+			'add_new_item'          => __( 'Criar novo', 'mapa-educacao' ),
+			'add_new'               => __( 'Criar novo', 'mapa-educacao' ),
+			'new_item'              => __( 'Novo projeto', 'mapa-educacao' ),
+			'edit_item'             => __( 'Editar projeto', 'mapa-educacao' ),
+			'update_item'           => __( 'Atualizar projeto', 'mapa-educacao' ),
+			'view_item'             => __( 'Ver projeto', 'mapa-educacao' ),
+			'view_items'            => __( 'Ver projetos', 'mapa-educacao' ),
+			'search_items'          => __( 'Buscar por', 'mapa-educacao' ),
+			'not_found'             => __( 'Nenhum projeto encontrada', 'mapa-educacao' ),
+			'not_found_in_trash'    => __( 'Nenhum projeto encontrada no lixo', 'mapa-educacao' ),
+			'featured_image'        => __( 'Miniatura', 'mapa-educacao' ),
+			'set_featured_image'    => __( 'Enviar miniatura', 'mapa-educacao' ),
+			'remove_featured_image' => __( 'Remover miniatura', 'mapa-educacao' ),
+			'use_featured_image'    => __( 'Usar como miniatura', 'mapa-educacao' ),
+			'insert_into_item'      => __( 'Inserir no projeto', 'mapa-educacao' ),
+			'uploaded_to_this_item' => __( 'Subir para este projeto', 'mapa-educacao' ),
+			'items_list'            => __( 'Lista de projetos', 'mapa-educacao' ),
+			'items_list_navigation' => __( 'Navegar por projetos', 'mapa-educacao' ),
+			'filter_items_list'     => __( 'Filtrar por projetos', 'mapa-educacao' ),
+		);
+		$args = array(
+			'label'                 => __( 'Projeto', 'mapa-educacao' ),
+			'description'           => __( 'Projetos', 'mapa-educacao' ),
+			'labels'                => $labels,
+			'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+			'taxonomies'            => array( 'category', 'post_tags' ),
+			'hierarchical'          => false,
+			'public'                => true,
+			'show_ui'               => true,
+			'show_in_menu'          => true,
+			'menu_position'         => 5,
+			'menu_icon'             => 'dashicons-universal-access-alt',
+			'show_in_admin_bar'     => true,
+			'show_in_nav_menus'     => true,
+			'can_export'            => true,
+			'has_archive'           => 'projetos',
+			'exclude_from_search'   => false,
+			'publicly_queryable'    => true,
+			'capability_type'       => 'post',
+		);
+		register_post_type( 'projects', $args );
+
+	}
+	add_action( 'init', 'register_projects', 0 );
