@@ -6153,6 +6153,22 @@ body {
     position: absolute;
     right: 0;
     top: 50%; }
+    .projects .owl-nav button.owl-next {
+      border: 1px solid red;
+      background: url("img/next_icon.svg") no-repeat center center !important;
+      background-size: 10px 20px;
+      text-indent: -5000px;
+      overflow: hidden;
+      width: 10px; }
+    .projects .owl-nav button.owl-prev {
+      border: 1px solid red;
+      background: url("img/prev_icon.svg") no-repeat center center !important;
+      background-size: 10px 20px;
+      text-indent: -5000px;
+      overflow: hidden;
+      width: 10px; }
+    .projects .owl-nav button:focus, .projects .owl-nav button:active {
+      outline: none; }
 
 @media (min-width: 768px) {
   .highlights .item .container h2 {

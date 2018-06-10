@@ -13,8 +13,6 @@ $(function () {
 	});
 
 	$('.projects .owl-carousel').owlCarousel({
-		autoplay: true,
-		autoplayTimeout: 7000,
 		dots: false,
 		loop: true,
 		responsive: {

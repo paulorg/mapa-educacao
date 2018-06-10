@@ -204,6 +204,27 @@
 		position: absolute;;
 		right: 0;
 		top: 50%;
+		button{
+			&.owl-next{
+				border: 1px solid red;
+				background: url('img/next_icon.svg') no-repeat center center !important;
+				background-size: 10px 20px;
+				text-indent: -5000px;
+				overflow: hidden;
+				width: 10px;
+			}
+			&.owl-prev{
+				border: 1px solid red;
+				background: url('img/prev_icon.svg') no-repeat center center !important;
+				background-size: 10px 20px;
+				text-indent: -5000px;
+				overflow: hidden;
+				width: 10px;
+			}
+			&:focus, &:active{
+				outline: none;
+			}
+		}
 	}
 }
 
