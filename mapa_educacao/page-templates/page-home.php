@@ -58,15 +58,19 @@
 					</article>
 			<?php } } wp_reset_postdata(); ?>
 		</div>
-		<a href="#" title="<?php _e('Ver mais posts', 'mapa-educacao'); ?>"><?php _e('Ver mais posts', 'mapa-educacao'); ?></a>
+		<a href="#" class="more" title="<?php _e('Ver mais posts', 'mapa-educacao'); ?>"><?php _e('Ver mais posts', 'mapa-educacao'); ?></a>
 	</div>
 </section>
-<section>
-	<div class="container video">
-		<h2><?php _e('Você se interessa por educação?', 'mapa-educacao'); ?></h2>
-		<p><?php _e('Sonha que cada criança e cada jovem do país tenham as mesmas oportunidades educacionais?', 'mapa-educacao'); ?></p>
-		<a class="btn btn-ghost btn-block"><?php _e('Assine nossa newsletter', 'mapa-educacao'); ?></a>
-		<a class="btn btn-primary btn-block"><?php _e('Faça parte', 'mapa-educacao'); ?></a>
+<section class="video">
+	<div class="container">
+		<div class="row">
+			<div class="box">
+				<h2><?php _e('Você se interessa por educação?', 'mapa-educacao'); ?></h2>
+				<p><?php _e('Sonha que cada criança e cada jovem do país tenham as mesmas oportunidades educacionais?', 'mapa-educacao'); ?></p>
+				<a class="btn btn-ghost btn-block"><?php _e('Assine nossa newsletter', 'mapa-educacao'); ?></a>
+				<a class="btn btn-primary btn-block"><?php _e('Faça parte', 'mapa-educacao'); ?></a>
+			</div>
+		</div>
 	</div>
 </section>
 <section class="projects">
@@ -91,12 +95,5 @@
 		<?php } } wp_reset_postdata(); ?>
 	</div>
 </section>
-<section>
-	<div class="container video">
-		<h2><?php _e('Você se interessa por educação?', 'mapa-educacao'); ?></h2>
-		<p><?php _e('Sonha que cada criança e cada jovem do país tenham as mesmas oportunidades educacionais?', 'mapa-educacao'); ?></p>
-		<a class="btn btn-ghost btn-block"><?php _e('Assine nossa newsletter', 'mapa-educacao'); ?></a>
-		<a class="btn btn-primary btn-block"><?php _e('Faça parte', 'mapa-educacao'); ?></a>
-	</div>
-</section>
+
 <?php get_footer(); ?>

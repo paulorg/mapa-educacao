@@ -6128,6 +6128,15 @@ body {
       overflow: hidden;
       padding: 0 0 1.5rem 0;
       width: 100%; }
+      .blog-posts article .box a {
+        padding: 0 0 0 1.5rem; }
+        .blog-posts article .box a:after {
+          left: 1.5rem; }
+        .blog-posts article .box a:hover, .blog-posts article .box a:active, .blog-posts article .box a:focus {
+          text-decoration: none;
+          padding-left: 2rem; }
+          .blog-posts article .box a:hover:after, .blog-posts article .box a:active:after, .blog-posts article .box a:focus:after {
+            left: 2rem; }
   .blog-posts a {
     color: #00AA61;
     display: inline;
@@ -6149,6 +6158,46 @@ body {
       position: absolute;
       right: 0;
       transition: all .2s ease-out; }
+    .blog-posts a.more {
+      display: inline-block;
+      margin-top: 2rem; }
+
+.video {
+  padding-bottom: 0;
+  padding-top: 5rem;
+  position: relative;
+  margin-bottom: 5rem; }
+  .video .box {
+    background: linear-gradient(45deg, #420257 0%, #680389 100%);
+    color: #fff;
+    padding: 3rem; }
+    .video .box h2 {
+      font-size: 2em;
+      font-weight: 700;
+      line-height: 2.5rem; }
+  .video:before {
+    background: url("https://img.youtube.com/vi/KP5KPm6Ir9o/maxresdefault.jpg") no-repeat center center;
+    background-size: cover;
+    bottom: 4rem;
+    content: '';
+    display: block;
+    filter: grayscale(1);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1; }
+  .video:after {
+    background: linear-gradient(45deg, #E2A90B 0%, #FAD338 100%);
+    bottom: 4rem;
+    content: '';
+    display: block;
+    left: 0;
+    opacity: .85;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1; }
 
 .projects {
   color: #fff;
@@ -6330,19 +6379,27 @@ body {
         margin: 0; }
       .blog-posts article .box a {
         bottom: -3rem;
-        padding: 0 0 0 1.5rem;
         position: absolute; }
-        .blog-posts article .box a:after {
-          left: 1.5rem; }
-        .blog-posts article .box a:hover, .blog-posts article .box a:active, .blog-posts article .box a:focus {
-          text-decoration: none;
-          padding-left: 2rem; }
-          .blog-posts article .box a:hover:after, .blog-posts article .box a:active:after, .blog-posts article .box a:focus:after {
-            left: 2rem; }
       .blog-posts article .box:hover a {
         bottom: 1rem; }
       .blog-posts article .box:hover figure, .blog-posts article .box:hover h3 {
-        transform: translate3d(0, -3rem, 0); } }
+        transform: translate3d(0, -3rem, 0); }
+    .blog-posts a.more {
+      position: absolute;
+      top: 9rem; }
+
+  .video {
+    padding: 0; }
+    .video:after, .video:before {
+      left: calc(50% - 570px); }
+    .video .container {
+      min-height: 36rem;
+      position: relative; }
+      .video .container .box {
+        bottom: 0;
+        position: absolute;
+        right: 0;
+        width: 445px; } }
 @media (min-width: 1200px) {
   .projects .owl-item a {
     height: 0;
@@ -6420,6 +6477,7 @@ body {
   body > footer {
     background: linear-gradient(45deg, #021e47 0%, #053E91 100%);
     color: #fff;
+    margin-top: 5rem;
     padding: 5rem 0; }
     body > footer h2 {
       background: url("img/logo_mapa.svg") no-repeat top center;
