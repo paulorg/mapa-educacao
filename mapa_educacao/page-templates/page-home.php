@@ -97,6 +97,24 @@
 		<?php } } wp_reset_postdata(); ?>
 	</div>
 </section>
+<section class="newsletter">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-5">
+				<h2><?php _e('Assine nossa newsletter', 'mapa-educacao'); ?></h2>
+				<p><?php _e('Acompanhe os projetos e eventos do Mapa Educação, além de receber nossas colunas de destaque e as principais notícias de educação do Brasil', 'mapa-educacao'); ?></p>
+			</div>
+			<form class="col-lg-7">
+				<div class="input-group">
+					<input type="text" class="form-control" name="email" placeholder="<?php _e('Digite seu email', 'mapa-educacao'); ?>">
+					<div class="input-group-append">
+						<button class="btn btn-secondary" type="button"><?php _e('Enviar', 'mapa-educacao'); ?></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
 <div class="modal fade" id="video" tabindex="-1" role="dialog" aria-labelledby="video" aria-hidden="true">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
