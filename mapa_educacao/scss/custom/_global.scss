@@ -287,6 +287,7 @@ body{
 @include media-breakpoint-up(md){
 	body{
 		& > footer{
+      margin-top: 10rem;
       ul{
         li{
           ul{

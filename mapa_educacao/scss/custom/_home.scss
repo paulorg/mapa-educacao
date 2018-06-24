@@ -230,9 +230,6 @@
 // Video
 
 .video{
-	// .container{
-	// 	border: 1px solid green;
-	// }
 	padding:{
 		bottom: 0;
 		top: 5rem;
@@ -247,7 +244,42 @@
 			font-size: 2em;
 			font-weight: 700;
 			line-height: 2.5rem;
+			& + p{
+				margin: 2rem 0;
+			}
 		}
+		.btn{
+			border-radius: 3px;
+			font-size: 1rem;
+			font-weight: 500;
+			text-transform: uppercase;
+			& + .btn{
+				margin-top: 1rem;
+			}
+			&.btn-primary{
+				background: $yellow;
+				border-color: $yellow;
+				color: $purple;
+				&:hover, &:active, &:focus{
+					background: lighten($yellow, 10%);
+					border-color: lighten($yellow, 10%);
+					color: lighten($purple, 10%);
+				}
+			}
+			&.btn-ghost{
+				background: transparent;
+				border-color: $yellow;
+				color: $yellow;
+				&:hover, &:active, &:focus{
+					background: lighten($yellow, 10%);
+					border-color: lighten($yellow, 10%);
+					color: lighten($purple, 10%);
+				}
+			}
+		}
+	}
+	.play-video{
+		display: none;
 	}
 	&:before{
 		background: url('https://img.youtube.com/vi/KP5KPm6Ir9o/maxresdefault.jpg') no-repeat center center;
@@ -276,11 +308,40 @@
 	}
 }
 
+#video{
+	.modal-content{
+		background: none;
+		border: none;
+		.modal-header{
+			border: none;
+			.close{
+				color: $white;
+				padding: 1rem 0 1rem 1rem;
+				opacity: .8;
+			}
+		}
+		.modal-body{
+			background: $gray-800;
+			padding: 0;
+		}
+	}
+}
+
 // Projects Carousel
 .projects{
 	color: $white;
+	margin-top: 8rem;
 	min-height: 40rem;
 	position: relative;
+	h2{
+		color: $gray-800;
+		font-size: 2.5rem;
+		font-style: italic;
+		font-weight: 700;
+		line-height: 3;
+		text-align: center;
+		margin: 0 0 1rem;
+	}
 	.owl-item{
 		align-items: center;
 		background: linear-gradient(45deg, rgba($purple, 0) 0%, rgba(lighten($pink, 5%), 0) 100%);
@@ -366,7 +427,7 @@
 		left: 0;
 		position: absolute;
 		right: 0;
-		top: 4rem;
+		top: 10rem;
 	}
 	.owl-nav{
 		display: flex;
@@ -451,7 +512,7 @@
 		position: relative;
 		h2{
 			color: $gray-800;
-			left: calc(50% + 130px);
+			left: calc(50% + 160px);
 			padding: 0;
 			position: absolute;
 			right: 0;
@@ -464,11 +525,10 @@
 		}
 		.box{
 			align-items: center;
-			background: linear-gradient(45deg, $purple 0%, lighten($pink, 5%) 100%);
 			display: flex;
 			margin: 0;
 			min-height: 28rem;
-			padding: 0 12rem 4rem 30px;
+			padding: 0 6rem 4rem 0;
 			z-index: 1;
 			&:after{
 				background: $gray-800;
@@ -476,10 +536,21 @@
 				display: block;
 				height: 1px;
 				position: absolute;
-				right: 0;
+				right: -120px;
 				top: 11.5rem;
 				width: 6rem;
 			}
+		}
+		&:before{
+			background: linear-gradient(45deg, $purple 0%, lighten($pink, 5%) 100%);
+			bottom: 0;
+			content: '';
+			display: block;
+			left: 0;
+			position: absolute;
+			right: calc(50% + 15px);
+			top: 0rem;
+			z-index: 1;
 		}
 	}
 	.blog-posts{
@@ -544,17 +615,53 @@
 				width: 445px;
 			}
 		}
+		.play-video{
+			background: rgba($white, .1) url('img/play_icon.svg') no-repeat center center;
+			background-size: 12rem;
+			border: 1px solid $white;
+			border-radius: 50%;
+			display: block;
+			height: 12rem;
+			left: calc(50% - 320px);
+			position: absolute;
+			text-indent: -5000px;
+			transition: all .2s ease-out;
+			top: calc(50% - 8rem);
+			width: 12rem;
+			&:hover{
+				background-color: rgba($white, .5);
+				border-color: transparent;
+				outline: none;
+			}
+		}
 	}
 }
 
 @include media-breakpoint-up(xl){
 	.projects{
+		h2{
+			margin-bottom: 8rem;
+			position: relative;
+			&:after{
+				background: $gray-800;
+				bottom: -70px;
+				content: '';
+				display: block;
+				height: 65px;
+				left: 50%;
+				position: absolute;
+				width: 1px;
+			}
+		}
 		.owl-item{
 			a{
 				height: 0;
 				opacity: 0;
 				visibility: hidden;
 			}
+		}
+		&:before{
+			top: 19rem;
 		}
 	}
 }

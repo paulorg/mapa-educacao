@@ -27,7 +27,7 @@
 	<div class="container">
 		<div class="row">
 			<h2 class="col-12"><?php _e('Quem somos', 'mapa-educacao'); ?></h2>
-			<div class="box col-12 col-lg-7">
+			<div class="box col-12 col-lg-6">
 				<p><?php _e('Somos um <strong>movimento</strong> para reforçar o direito de todos os brasileiros ao <strong>acesso a uma educação de qualidade</strong>, e acreditamos que o jovem deve ser o protagonista dessa mudança.', 'mapa-educacao'); ?></p>
 			</div>
 		</div>
@@ -64,6 +64,7 @@
 <section class="video">
 	<div class="container">
 		<div class="row">
+			<a class="play-video" href="#" data-url="KP5KPm6Ir9o"><?php _e('Reproduzir vídeo', 'mapa-educacao'); ?></a>
 			<div class="box">
 				<h2><?php _e('Você se interessa por educação?', 'mapa-educacao'); ?></h2>
 				<p><?php _e('Sonha que cada criança e cada jovem do país tenham as mesmas oportunidades educacionais?', 'mapa-educacao'); ?></p>
@@ -74,6 +75,7 @@
 	</div>
 </section>
 <section class="projects">
+	<h2><?php _e('O que fazemos', 'mapa-educacao'); ?></h2>
 	<div class="container owl-carousel">
 		<?php
 			$args = array(
@@ -95,5 +97,18 @@
 		<?php } } wp_reset_postdata(); ?>
 	</div>
 </section>
-
+<div class="modal fade" id="video" tabindex="-1" role="dialog" aria-labelledby="video" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="modal-body">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe width="720" height="405" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <?php get_footer(); ?>

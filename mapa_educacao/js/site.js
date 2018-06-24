@@ -1,9 +1,19 @@
 $(function () {
 
-	// $('body').on('click', function(e){
-	// 	console.log('Hello world!');
-	// 	e.preventDefault();
-	// });
+	$('.play-video').on('click', function(e){
+		e.preventDefault();
+		var jqThis = $(this);
+		var videoURL = 'http://www.youtube.com/embed/' + jqThis.data('url') + '?rel=0&controls=0&showinfo=0&autoplay=1';
+		$('#video').modal('show');
+		$('#video').on('shown.bs.modal', function(e){
+			$('#video iframe').attr('src',videoURL);
+		});
+		$('#video').on('hide.bs.modal', function(e){
+			$('#video iframe').attr('src','');
+		});
+	});
+
+
 
 	$('.highlights').owlCarousel({
 		autoplay: true,
